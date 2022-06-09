@@ -1,0 +1,31 @@
+.movement-type {
+    width: 100%;
+    border-radius: 20px;
+    color: #FFFFFF;
+    text-align: center;
+}
+
+.movement-expense {
+    background: red;
+}
+
+.movement-deposit {
+    background: green;
+}
+
+.movement-row {
+    border: 1px solid grey;
+    padding: 5px;
+}
+
+.first-row {
+    border-radius: 8px 8px 0px 0px;
+}
+
+.last-row {
+    border-radius: 0px 0px 8px 8px;
+}
+
+img {
+    cursor: pointer;
+}

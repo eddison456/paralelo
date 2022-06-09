@@ -1,0 +1,15 @@
+.xform {
+    border: 1px solid black;
+    border-radius: 8px;
+}
+
+.xheader {
+    background: #bdbdbd;
+    border-radius: 8px 8px 0px 0px;
+    padding: 5px;
+    font-weight: bold;
+}
+
+.xbody {
+    padding: 5px;
+}

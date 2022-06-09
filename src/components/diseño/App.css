@@ -1,0 +1,13 @@
+.App {
+  text-align: center;
+}
+
+.app-content {
+  margin-top: 10px !important;
+}
+
+.xcard {
+  background: #edf2f8;
+  border-radius: 8px;
+  border: 0.1px solid rgb(207, 206, 206);
+}
