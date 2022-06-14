@@ -1,7 +1,7 @@
 import {  useEffect } from "react";
 
 
-const Header = (props) => {
+const Encabezado = (props) => {
  
 
   const controlador = (e) => {
@@ -45,4 +45,4 @@ const Header = (props) => {
   );
 };
 
-export default Header;
+export default Encabezado;

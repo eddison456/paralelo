@@ -13,7 +13,7 @@ const Movimiento = (props) => {
   }
 
   const eliminar = (id) => {
-    const valor = props.movimiento.filter(item => item.id !== id);
+    const valor = props.movimiento.filter(e => e.id !== id);
     props.setmovimiento(valor);
   }
 
@@ -24,7 +24,7 @@ const Movimiento = (props) => {
   }
 
   useEffect(() => {
-    setMovimientoFiltro(props.movimiento.filter(item => item.name.includes(cambioFiltro.filter) && (item.tipoMovimiento == cambioFiltro.tipoMovimiento || cambioFiltro.tipoMovimiento == '') ));
+    setMovimientoFiltro(props.movimiento.filter(e => e.name.includes(cambioFiltro.filter) && (e.tipoMovimiento == cambioFiltro.tipoMovimiento || cambioFiltro.tipoMovimiento == '') ));
   }, [cambioFiltro, props.movimiento]);
 
   return (

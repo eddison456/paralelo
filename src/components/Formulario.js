@@ -2,10 +2,10 @@ import "./diseño/Form.css";
 import { v4 as uuidv4 } from 'uuid';
 
 
-const Form = (props) => {
+const Formulario= (props) => {
 
   const controlador = (e) => {
-    e.preventDefault();
+  
     props.setmovimientoEstado({...props.movimientoEstado, [e.target.name]: e.target.value});
   };
 
@@ -14,22 +14,23 @@ const Form = (props) => {
    
     const reg = new RegExp('^[a-zA-Z0-9]+$');
     const numerico = new RegExp('^[0-9]+$');
-    if 
-   (props.headerEstado.saldoInicial === ''){
-    alert("El saldo inicial no debe tener un valor");
-  }else if (props.movimientoEstado.tipoMovimiento === '') {
-    alert("Seleccione un tipo de movimiento");
+
+  if (props.movimientoEstado.tipoMovimiento === '') {
+    alert("el campo movimimiento no puede ser vacio ");
   } else if (props.movimientoEstado.name === '') {
-    alert("Debe ingresar un movimiento ");
-  }else if (!reg.test(props.movimientoEstado.name)){
-    props.setmovimientoEstado({...props.movimientoEstado,name: ''});
-    alert("El nombre del tipo de movimiento puede tener letras y numeros");
-  }else if(!numerico.test(props.movimientoEstado.value)){
+    alert("el campo nombre no puede ser vacio");
+  } else if 
+  (props.headerEstado.saldoInicial === ''){
+   alert("el campo valor inicial  no puede ser vacio ")
+ }else if(!numerico.test(props.movimientoEstado.value)){
     props.setmovimientoEstado({...props.movimientoEstado,value: ''});
     alert("La cantidad no permite letras ni valores negativos");
   }else if(props.movimientoEstado.value<=0){
     props.setmovimientoEstado({...props.movimientoEstado,value: ''});
-    alert("La cantidad ingresada debe ser mayor a cero");
+    alert("La cantidad ingresada esta incorrecta ,  debe ser mayor a cero");
+  }else if (!reg.test(props.movimientoEstado.name)){
+    props.setmovimientoEstado({...props.movimientoEstado,name: ''});
+    alert("El nombre del tipo de movimiento puede tener letras y numeros");
   }else if(props.movimientoEstado.tipoMovimiento === 'pasivo'){
     if (parseFloat(props.headerEstado.saldoFinal) - parseFloat(props.movimientoEstado.value) < 0){
       alert("El campo no recibe valores negativos");
@@ -80,25 +81,25 @@ const Form = (props) => {
    const reg = new RegExp('^[a-zA-Z0-9]+$');
    const numerico = new RegExp('^[0-9]+$');
    
-   if 
-   (props.headerEstado.saldoInicial === ''){
-    alert("El saldo inicial no debe tener un valor");
-  }else if (props.movimientoEstado.tipoMovimiento=== '') {
-    alert("Seleccione un tipo de movimiento");
+   if (props.movimientoEstado.tipoMovimiento === '') {
+    alert("el campo movimimiento no puede ser vacio ");
   } else if (props.movimientoEstado.name === '') {
-    alert("Debe ingresar un movimiento ");
-  }else if (!reg.test(props.movimientoEstado.name)){
-    props.setmovimientoEstado({...props.movimientoEstado,name: ''});
-    alert("El nombre del tipo de movimiento puede tener letras y numeros");
-  }else if(!numerico.test(props.movimientoEstado.value)){
+    alert("el campo nombre no puede ser vacio");
+  } else if 
+  (props.headerEstado.saldoInicial === ''){
+   alert("el campo valor inicial  no puede ser vacio ")
+ }else if(!numerico.test(props.movimientoEstado.value)){
     props.setmovimientoEstado({...props.movimientoEstado,value: ''});
     alert("La cantidad no permite letras ni valores negativos");
   }else if(props.movimientoEstado.value<=0){
     props.setmovimientoEstado({...props.movimientoEstado,value: ''});
-    alert("La cantidad ingresada debe ser mayor a cero");
+    alert("La cantidad ingresada esta incorrecta ,  debe ser mayor a cero");
+  }else if (!reg.test(props.movimientoEstado.name)){
+    props.setmovimientoEstado({...props.movimientoEstado,name: ''});
+    alert("El nombre del tipo de movimiento puede tener letras y numeros");
   }else if(props.movimientoEstado.tipoMovimiento === 'pasivo'){
-    console.log("entre a la condicion ")
     if (parseFloat(props.headerEstado.saldoFinal) - parseFloat(props.movimientoEstado.value) < 0){
+      alert("El campo no recibe valores negativos");
  
   
     }else{
@@ -215,4 +216,4 @@ const Form = (props) => {
   );
 };
 
-export default Form;
+export default Formulario;

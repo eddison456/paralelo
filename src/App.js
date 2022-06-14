@@ -1,8 +1,7 @@
-
 import { useState, useEffect } from "react";
 
-import Header from './components/Header';
-import Form from './components/Form';
+import Encabezado from './components/Encabezado';
+import Formulario from './components/Formulario';
 import Movimiento from './components/Movimiento';
 
 
@@ -38,7 +37,7 @@ const App = () => {
 
         <div className="grid-x grid-margin-x">
           <div className="cell small-12">
-            <Header
+            <Encabezado
               headerEstado={headerEstado}
               setHeaderEstado={setHeaderEstado}
             />
@@ -49,7 +48,7 @@ const App = () => {
         
         <div className="grid-x grid-padding-x">
           <div className="cell small-6">
-            <Form
+            <Formulario
               movimiento={movimiento}
               setmovimiento={setmovimiento}       
               headerEstado={headerEstado}
