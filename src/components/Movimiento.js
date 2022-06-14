@@ -5,10 +5,10 @@ import CambioMovimiento from './CambioMovimiento';
 
 
 const Movimiento = (props) => {
-  const [cambioFiltro,setCambioFiltro] = useState({tipoMovimiento: '', filter: ''});
+  const [cambioFiltro,setCambioFiltro] = useState({tipoMovimiento: '', filtro: ''});
   const [movimientoFiltro, setMovimientoFiltro] = useState([]);
 
-  const controladorFilter = (e) => {
+  const controlador = (e) => {
     setCambioFiltro({...cambioFiltro, [e.target.name]: e.target.value});
   }
 
@@ -24,7 +24,11 @@ const Movimiento = (props) => {
   }
 
   useEffect(() => {
-    setMovimientoFiltro(props.movimiento.filter(e => e.name.includes(cambioFiltro.filter) && (e.tipoMovimiento == cambioFiltro.tipoMovimiento || cambioFiltro.tipoMovimiento == '') ));
+    console.log(props.movimiento)
+   
+      setMovimientoFiltro(props.movimiento.filter(e => e.nombre.includes(cambioFiltro.filtro) && (e.tipoMovimiento == cambioFiltro.tipoMovimiento || cambioFiltro.tipoMovimiento == '') ));
+    
+   
   }, [cambioFiltro, props.movimiento]);
 
   return (
@@ -39,14 +43,14 @@ const Movimiento = (props) => {
         <div className="form-group row">
             <br/>
               <div className="col-sm-4">
-                <input type="text" name={'filter'} onChange={controladorFilter} />
+                <input type="text" name={'filtro'} onChange={controlador} />
               </div>
               <div className="col-sm-6">
-                <input type="radio" name="tipoMovimiento" onChange={controladorFilter} value={''}/> Todos
+                <input type="radio" name="tipoMovimiento" onChange={controlador} value={''}/> Todos
                 &nbsp;
-                <input type="radio" name="tipoMovimiento" onChange={controladorFilter} value={'pasivo'}/> Gastos
+                <input type="radio" name="tipoMovimiento" onChange={controlador} value={'pasivo'}/> Gastos
                 &nbsp;
-                <input type="radio" name="tipoMovimiento" onChange={controladorFilter} value={'activo'}/> Ingresos
+                <input type="radio" name="tipoMovimiento" onChange={controlador} value={'activo'}/> Ingresos
               </div>
 
             <br/>

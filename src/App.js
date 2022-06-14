@@ -16,18 +16,19 @@ const App = () => {
   const [movimiento, setmovimiento] = useState([]);
 
   useEffect(() => {
+    
     var valor = headerEstado.saldoInicial !== '' ? parseFloat(headerEstado.saldoInicial) : 0;
 
     for (const movement of movimiento){
       if (movement.tipoMovimiento === 'pasivo') {
-        valor =valor- parseFloat(movement.value);
+        valor =valor- parseFloat(movement.valor);
       }else if (movement.tipoMovimiento === 'activo') {
-        valor =valor+ parseFloat(movement.value);
+        valor =valor+ parseFloat(movement.valor);
       }
     }
 
     setHeaderEstado({...headerEstado, saldoFinal: String(valor)});
-
+      
   }, [headerEstado.saldoInicial, movimiento]);
 
   return (

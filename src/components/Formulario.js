@@ -17,37 +17,37 @@ const Formulario= (props) => {
 
   if (props.movimientoEstado.tipoMovimiento === '') {
     alert("el campo movimimiento no puede ser vacio ");
-  } else if (props.movimientoEstado.name === '') {
+  } else if (props.movimientoEstado.nombre=== '') {
     alert("el campo nombre no puede ser vacio");
   } else if 
   (props.headerEstado.saldoInicial === ''){
    alert("el campo valor inicial  no puede ser vacio ")
- }else if(!numerico.test(props.movimientoEstado.value)){
-    props.setmovimientoEstado({...props.movimientoEstado,value: ''});
+ }else if(!numerico.test(props.movimientoEstado.valor)){
+    props.setmovimientoEstado({...props.movimientoEstado,valor: ''});
     alert("La cantidad no permite letras ni valores negativos");
-  }else if(props.movimientoEstado.value<=0){
-    props.setmovimientoEstado({...props.movimientoEstado,value: ''});
+  }else if(props.movimientoEstado.valor<=0){
+    props.setmovimientoEstado({...props.movimientoEstado,valor: ''});
     alert("La cantidad ingresada esta incorrecta ,  debe ser mayor a cero");
-  }else if (!reg.test(props.movimientoEstado.name)){
-    props.setmovimientoEstado({...props.movimientoEstado,name: ''});
+  }else if (!reg.test(props.movimientoEstado.nombre)){
+    props.setmovimientoEstado({...props.movimientoEstado,nombre: ''});
     alert("El nombre del tipo de movimiento puede tener letras y numeros");
   }else if(props.movimientoEstado.tipoMovimiento === 'pasivo'){
-    if (parseFloat(props.headerEstado.saldoFinal) - parseFloat(props.movimientoEstado.value) < 0){
+    if (parseFloat(props.headerEstado.saldoFinal) - parseFloat(props.movimientoEstado.valor) < 0){
       alert("El campo no recibe valores negativos");
   
     }else{
-      const valores = props.movimiento.filter(item => item.id !== props.movimientoEstado.id);
+      const valores = props.movimiento.filter(e => e.id !== props.movimientoEstado.id);
       const valorActualizado = {
         id: props.movimientoEstado.id,
         tipoMovimiento: props.movimientoEstado.tipoMovimiento,
-        name: props.movimientoEstado.name,
-        value: props.movimientoEstado.value
+        nombre: props.movimientoEstado.nombre,
+        valor: props.movimientoEstado.valor
       };
   
       valores.push(valorActualizado);
   
       props.setmovimiento(valores);
-      props.setmovimientoEstado({ tipoMovimiento: '', name: '', value: '', edit: false, id: ''});
+      props.setmovimientoEstado({ tipoMovimiento: '', nombre: '', valor: '', edit: false, id: ''});
   
       alert("Registro actualizado correctamente");
 
@@ -58,14 +58,14 @@ const Formulario= (props) => {
     const valorActualizado= {
       id: props.movimientoEstado.id,
       tipoMovimiento: props.movimientoEstado.tipoMovimiento,
-      name: props.movimientoEstado.name,
-      value: props.movimientoEstado.value
+      nombre: props.movimientoEstado.nombre,
+      valor: props.movimientoEstado.valor
     };
 
     valores .push(valorActualizado);
 
     props.setmovimiento(valores );
-    props.setmovimientoEstado({ tipoMovimiento: '', name: '', value: '', edit: false, id: ''});
+    props.setmovimientoEstado({ tipoMovimiento: '', nombre: '', valor: '', edit: false, id: ''});
 
     alert("Registro actualizado correctamente");
 
@@ -83,22 +83,22 @@ const Formulario= (props) => {
    
    if (props.movimientoEstado.tipoMovimiento === '') {
     alert("el campo movimimiento no puede ser vacio ");
-  } else if (props.movimientoEstado.name === '') {
+  } else if (props.movimientoEstado.nombre === '') {
     alert("el campo nombre no puede ser vacio");
   } else if 
   (props.headerEstado.saldoInicial === ''){
    alert("el campo valor inicial  no puede ser vacio ")
- }else if(!numerico.test(props.movimientoEstado.value)){
-    props.setmovimientoEstado({...props.movimientoEstado,value: ''});
+ }else if(!numerico.test(props.movimientoEstado.valor)){
+    props.setmovimientoEstado({...props.movimientoEstado,valor: ''});
     alert("La cantidad no permite letras ni valores negativos");
-  }else if(props.movimientoEstado.value<=0){
-    props.setmovimientoEstado({...props.movimientoEstado,value: ''});
+  }else if(props.movimientoEstado.valor<=0){
+    props.setmovimientoEstado({...props.movimientoEstado,valor: ''});
     alert("La cantidad ingresada esta incorrecta ,  debe ser mayor a cero");
-  }else if (!reg.test(props.movimientoEstado.name)){
-    props.setmovimientoEstado({...props.movimientoEstado,name: ''});
+  }else if (!reg.test(props.movimientoEstado.nombre)){
+    props.setmovimientoEstado({...props.movimientoEstado,nombre: ''});
     alert("El nombre del tipo de movimiento puede tener letras y numeros");
   }else if(props.movimientoEstado.tipoMovimiento === 'pasivo'){
-    if (parseFloat(props.headerEstado.saldoFinal) - parseFloat(props.movimientoEstado.value) < 0){
+    if (parseFloat(props.headerEstado.saldoFinal) - parseFloat(props.movimientoEstado.valor) < 0){
       alert("El campo no recibe valores negativos");
  
   
@@ -106,15 +106,15 @@ const Formulario= (props) => {
       const valorAgregado = {
         id: uuidv4(),
         tipoMovimiento: props.movimientoEstado.tipoMovimiento,
-        name: props.movimientoEstado.name,
-        value: props.movimientoEstado.value
+        nombre: props.movimientoEstado.nombre,
+        valor: props.movimientoEstado.valor
       };
   
       
   
       props.setmovimiento([...props.movimiento, valorAgregado]);
   
-      props.setmovimientoEstado({ tipoMovimiento: '', name: '', value: '', edit: false});
+      props.setmovimientoEstado({ tipoMovimiento: '', nombre: '', valor: '', edit: false});
 
       alert("Se almaceno el registro de forma correcta");
 
@@ -124,15 +124,15 @@ const Formulario= (props) => {
     const valorAgregado = {
       id: uuidv4(),
       tipoMovimiento: props.movimientoEstado.tipoMovimiento,
-      name: props.movimientoEstado.name,
-      value: props.movimientoEstado.value
+      nombre: props.movimientoEstado.nombre,
+      valor: props.movimientoEstado.valor
     };
 
   
 
     props.setmovimiento([...props.movimiento, valorAgregado]);
 
-    props.setmovimientoEstado({ tipoMovimiento: '', name: '', value: '', edit: false});
+    props.setmovimientoEstado({ tipoMovimiento: '', nombre: '', valor: '', edit: false});
     
     alert("Se almaceno el registro de forma correcta");
   }
@@ -176,7 +176,7 @@ const Formulario= (props) => {
                     <label>Nombre: </label>
                   </div>
                   <div className="col-sm-40">
-                    <input type="text" name="name" onChange={controlador} value={props.movimientoEstado.name} />
+                    <input type="text" name="nombre" onChange={controlador} value={props.movimientoEstado.nombre} />
                   </div>
                
               </div>
@@ -187,7 +187,7 @@ const Formulario= (props) => {
                     <label>Cantidad: </label>
                   </div>
                   <div className="col-sm-10">
-                    <input type="text" name="value" onChange={controlador} value={props.movimientoEstado.value}  />
+                    <input type="text" name="valor" onChange={controlador} value={props.movimientoEstado.valor}  />
                   </div>
                 
               </div>

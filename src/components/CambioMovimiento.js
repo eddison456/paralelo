@@ -10,12 +10,12 @@ const CambioMovimiento = (props) => {
               <span>
                 <img src={require('./img/iconEditar2.png')} width={25} onClick={() => props.actualizar(props.movement)} />
                 <img src={require('./img/iconBorrar.png')} width={25} onClick={() => props.eliminar(props.movement.id)} />
-                {props.movement.name}
+                {props.movement.nombre} 
               </span>
             </div>
             <div className="col-sm-4">
               <div className={props.movement.tipoMovimiento == 'activo' ? "movement-type movement-deposit" : 'movement-type movement-expense'}> 
-                <NumberFormat value={props.movement.value} displayType={'text'} thousandSeparator={true} prefix={'$'} />
+                <NumberFormat value={props.movement.valor} displayType={'text'} thousandSeparator={true} prefix={'$'} />
               </div>
             </div>
         </div>
