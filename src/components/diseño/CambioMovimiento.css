@@ -5,11 +5,11 @@
     text-align: center;
 }
 
-.movement-expense {
+.movement-pasivo{
     background: rgb(245, 115, 115);
 }
 
-.movement-deposit {
+.movement-activo{
     background: rgb(121, 216, 121);
 }
 
