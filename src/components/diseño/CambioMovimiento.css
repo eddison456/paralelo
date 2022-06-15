@@ -6,11 +6,11 @@
 }
 
 .movement-expense {
-    background: red;
+    background: rgb(245, 115, 115);
 }
 
 .movement-deposit {
-    background: green;
+    background: rgb(121, 216, 121);
 }
 
 .movement-row {

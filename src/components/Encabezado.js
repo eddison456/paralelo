@@ -10,8 +10,10 @@ const Encabezado = (props) => {
   };
 
   useEffect(() => {
-    
-    const valor = props.headerEstado.saldoInicial.replace(/[^0-9]+/g, '');
+
+    const numerico = new RegExp('^[0-9]+$');
+
+    const valor = props.headerEstado.saldoInicial.replace(numerico);
     props.setHeaderEstado({...props.headerEstado, saldoInicial: valor});
   }, [props.headerEstado.saldoInicial]);
 

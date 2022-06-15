@@ -15,7 +15,9 @@ const CambioMovimiento = (props) => {
             </div>
             <div className="col-sm-4">
               <div className={props.movement.tipoMovimiento == 'activo' ? "movement-type movement-deposit" : 'movement-type movement-expense'}> 
-                <NumberFormat value={props.movement.valor} displayType={'text'} thousandSeparator={true} prefix={'$'} />
+              
+                <NumberFormat value={props.movement.valor} displayType={'text'} />
+                
               </div>
             </div>
         </div>
